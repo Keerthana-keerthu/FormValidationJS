@@ -1,23 +1,21 @@
 function validateForm() {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const emailError = document.getElementById("emailError");
     const passwordError = document.getElementById("passwordError");
-
-    
     emailError.textContent = "";
     passwordError.textContent = "";
-
-    if (email.trim() === "") {
-        emailError.textContent = "Email is required";
-        return;
+    let valid = true;
+    if (!emailRegex.test(email)) {
+        emailError.textContent = "Please enter a valid email address.";
+        valid = false;
     }
-
     if (password.trim() === "") {
-        passwordError.textContent = "Password is required";
-        return;
+        passwordError.textContent = "Please enter a password.";
+        valid = false;
     }
-
-    
-    window.location.href = "./todo.html";
+    if (valid) {
+        window.location.href = "todo.html";
+    }
 }
