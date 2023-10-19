@@ -8,14 +8,17 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url(./img/pexels-nubia-navarro-\(nubikini\)-1110355.jpg);
-    background-size: cover;
+    background-color: black;
     color: white;
+    background-repeat: no-repeat;
+    background-position: fixed;
 }
 .box{
     position: relative;
     width: 450px;
     height: 550px;
+    background: url(./img/pexels-nubia-navarro-\(nubikini\)-1110355.jpg);
+    background-size: cover;
     border-radius: 30px;
     backdrop-filter: blur(3px);
     padding: 30px 50px;
@@ -116,4 +119,21 @@ h2{
 ::-webkit-scrollbar-thumb
 {
     background: white;
+}
+
+@media (max-width: 768px) {
+    body {
+        background-size: contain; 
+
+    .box {
+        width: 90%; 
+        height: auto; 
+    }
+}
+
+@media (max-width: 480px) {
+    .box {
+        padding: 20px 30px;
+    }
+}
 }
